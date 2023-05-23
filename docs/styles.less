@@ -1,0 +1,112 @@
+@backgronund-principal: rgb(215, 173, 231);
+@backgronund-secundario: #f6f6f6;
+@font-color-principal: black;
+@font-color-secundario: #333333;
+@font-size-principal: 1.6rem;
+@font-size-secundario: 1.4rem;
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+header {
+    width: 100%;
+    height: 10%;
+
+    .menu {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        background-color: @backgronund-principal;
+
+        .logo {
+            min-width: 5%;
+            height: 80%;
+            margin-top: 5px;
+            margin-left: 5px;
+            border: 2px solid @backgronund-secundario;
+        }
+
+        .menu__links {
+            height: 100%;
+            width: 90%;
+            display: flex;
+            align-items: center;
+            justify-content: end;
+
+            a {
+                margin: 10px;
+                padding: 0.8%;
+                border-radius: 10px;
+                text-decoration: none;
+                font-size: @font-size-secundario;
+                font-weight: bold;
+                border: 2px solid black;
+                color: @font-color-secundario;
+                background-color: @backgronund-secundario;
+            }
+
+            a:hover {
+                border: 2px solid white;
+                background-color: #d1d1d1;
+            }
+        }
+    }
+}
+
+main {
+    width: 100%;
+    height: 82%;
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 8%;
+    background-color: rgba(139, 109, 81, 0.966);
+    border: 2px solid @backgronund-secundario;
+
+    .description {
+        display: flex;
+        width: 80%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+
+        p {
+            font-size: @font-size-secundario;
+            color: white;
+        }
+    }
+
+    .icons {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        min-width: 20%;
+        height: 80%;
+
+        .icons__a {
+            border-radius: 20px;
+            margin-top: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+            width: 20%;
+            height: 100%;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}
