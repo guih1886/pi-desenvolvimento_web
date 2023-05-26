@@ -33,13 +33,13 @@
                 <?php
                 session_start();
                 if (isset($_SESSION["error"])) {
-                    include "../messages/erroLogin.php";
+                    include "erroLogin.php";
                 }
                 unset($_SESSION["error"]);
                 ?>
                 <?php
                 if (isset($_SESSION["sucessoSignup"])) {
-                    include "../messages/sucessoSignup.php";
+                    include "sucessoSignup.php";
                 }
                 unset($_SESSION["sucessoSignup"]);
                 ?>                
