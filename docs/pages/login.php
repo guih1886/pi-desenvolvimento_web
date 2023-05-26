@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./assets/valva.png" type="image/x-icon">
-    <link rel="stylesheet/less" type="text/less" href="../styles.less" />
+    <link rel="stylesheet/less" type="text/less" href="../styles/styles.less" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
     <title>Clínica Odontológica Valva</title>
 </head>
@@ -14,7 +14,7 @@
 <body>
     <header>
         <div class="menu">
-            <img class="logo" src="./assets/valva.png" alt="Logo-Valva">
+            <img class="logo" src="../assets/valva.png" alt="Logo-Valva">
             <div class="menu__links">
                 <a href="../index.php">Home</a>
             </div>
@@ -28,7 +28,7 @@
             </video>
         </div>
         <div class="login">
-            <form action="conexao.php" method="post" class="form-login">
+            <form action="../connections/login-script.php" method="post" class="form-login">
                 <h1>Login</h1>
                 <?php
                 session_start();

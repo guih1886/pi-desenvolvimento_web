@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./assets/valva.png" type="image/x-icon">
-    <link rel="stylesheet/less" type="text/less" href="../styles.less" />
+    <link rel="stylesheet/less" type="text/less" href="../styles/styles.less" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
     <title>Clínica Odontológica Valva</title>
 </head>
@@ -14,7 +14,7 @@
 <body>
     <header>
         <div class="menu">
-            <img class="logo" src="./assets/valva.png" alt="Logo-Valva">
+            <img class="logo" src="../assets/valva.png" alt="Logo-Valva">
         </div>
     </header>
     <main>
@@ -25,15 +25,15 @@
             </video>
         </div>
         <div class="login-signup">
-            <form action="signup-script.php" method="post" class="form-signup">
+            <form action="../connections/signup-script.php" method="post" class="form-signup">
                 <h1>Cadastre-se</h1>
                 <?php
                 session_start();
                 if (isset($_SESSION["error"])) {
-                    include "erroCadastro.php";
+                    include "../messages/erroCadastro.php";
                     unset($_SESSION["error"]);
                 } elseif (isset($_SESSION["errorEmail"])) {
-                    include "erroEmail.php";
+                    include "../messages/erroEmail.php";
                     unset($_SESSION["errorEmail"]);
                 }
                 ?>
