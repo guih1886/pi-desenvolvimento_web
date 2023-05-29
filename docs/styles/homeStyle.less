@@ -103,6 +103,13 @@ body {
             color: red;
         }
 
+        .mensagem-sucesso {
+            text-align: center;
+            align-self: center;
+            font-size: @font-size-secundario;
+            color: green;
+        }
+
         h1 {
             margin: 10px;
             text-align: center;
@@ -110,7 +117,8 @@ body {
             font-size: @font-size-principal+1;
         }
 
-        input, select {
+        input,
+        select {
             width: 80%;
             height: 10%;
             margin: 5px;
@@ -159,5 +167,64 @@ body {
         text-align: center;
         align-self: center;
         font-size: @font-size-secundario;
+    }
+}
+
+.formConsultas {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 60%;
+    height: 90%;
+    background-color: @backgronund-principal;
+
+    .mensagem-erro {
+        text-align: center;
+        align-self: center;
+        font-size: @font-size-secundario;
+        color: red;
+    }
+
+    .mensagem-sucesso {
+        text-align: center;
+        align-self: center;
+        font-size: @font-size-secundario;
+        color: green;
+    }
+
+    h1 {
+        margin: 10px;
+        text-align: center;
+        align-self: center;
+        font-size: @font-size-principal+1;
+    }
+
+    .tabela-consultas {
+        text-align: center;
+        width: 90%;
+        border-collapse: collapse;
+        font-size: @font-size-secundario;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+
+        thead {
+            background-color: #009879;
+            color: @font-color-secundario;
+        }
+
+        .linha-consultas {
+            border-bottom: 2px solid #dddddd;
+
+            td {
+                color: @font-color-secundario;
+                background-color: @backgronund-secundario;
+            }
+        }
+
+        th,
+        td {
+            color: white;
+        }
     }
 }

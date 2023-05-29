@@ -43,7 +43,7 @@ if ($result->num_rows > 0) {
         $index++;
     }
 
-    header('Location: ../pages/home.php');
+    header('Location: ../connections/chamaFormCadastro.php');
 
 } else {
     // Login inválido, exibir mensagem de erro

@@ -1,0 +1,1 @@
+<div class="mensagem-erro">Total máximo de consultas atingida.</div>

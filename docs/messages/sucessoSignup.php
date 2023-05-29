@@ -1,1 +1,1 @@
-<div class="mensagem-sucessoSignup">Usuário cadastrado com sucesso!</div>
+<div class="mensagem-sucesso">Usuário cadastrado com sucesso!</div>
