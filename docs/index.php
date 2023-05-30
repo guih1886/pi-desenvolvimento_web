@@ -27,22 +27,8 @@
                 Seu navegador não suporta o elemento de vídeo.
             </video>
     </main>
-    <footer>
-        <div class="description">
-            <p>Clínica especialista em ortodontia, diagnóstico e tratamento de problemas relacionados a sua saúde bucal
-                e integridade dos dentes.
-            </p>
-
-        </div>
-        <div class="icons">
-            <a class="icons__a" href="#" target="_blank">
-                <img src="assets/facebook.png" alt="facebook" />
-            </a>
-            <a class="icons__a" href="#" target="_blank">
-                <img src="assets/instagram.png" alt="instagram" />
-            </a>
-        </div>
-    </footer>
+        <!-- Chama o componente do rodapé -->
+    <?php include("components/Footer/footer.php") ?>
     <script src="https://cdn.jsdelivr.net/npm/less"></script>
 </body>
 

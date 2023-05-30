@@ -13,9 +13,7 @@
         }
         ?>
     </select>
-    <?php if (isset($_SESSION["sucessoCadastro"])) {
-        include "../messages/sucessoCadastro.php";
-    } elseif (isset($_SESSION["consultasCheias"])) {
+    <?php if (isset($_SESSION["consultasCheias"])) {
         include "../messages/erroConsultasCheias.php";
     } else {
         echo '<button type="submit">Cadastrar</button>';
@@ -24,5 +22,6 @@
     unset($_SESSION["sucessoCadastro"]);
     unset($_SESSION["consultasCheias"]);
     ?>
-    <p class="informacao">*Os horários são agendados somente de hora em hora. <br> Máximo de 10 consultas por paciente.</p>
+    <p class="informacao">*Os horários são agendados somente de hora em hora. <br> Máximo de 10 consultas por paciente.
+    </p>
 </form>

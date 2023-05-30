@@ -1,0 +1,1 @@
+<div class="mensagem-sucesso">Consulta excluida com sucesso!</div>

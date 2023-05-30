@@ -15,13 +15,13 @@ if ($result->num_rows > 0) {
     // Login bem-sucedido, redirecionar para a página principal
     session_start();
     while ($row = $result->fetch_assoc()) {
-        // Acessar os valores das colunas pelo nome
+        // Obtem os dados do usuário.
         $id = $row['id'];
         $nome = $row['nome'];
         $email = $row['email'];
         $telefone = $row['telefone'];
 
-        // Fazer algo com os dados obtidos
+        // Cria a sessão do usuário com os dados que veio do banco de dados;
         $_SESSION["usuario"] = array(
             "id" => $id,
             "nome" => $nome,
@@ -30,19 +30,20 @@ if ($result->num_rows > 0) {
         );
     }
 
+    // Assim que é feito o login, é carregado do banco a lista dos médicos.
     $query2 = "SELECT * FROM medico";
     $result2 = $conn->query($query2);
     $_SESSION["medico"] = array();
 
     while ($row = $result2->fetch_assoc()) {
         $index = 0;
+        // Cria a sessão dos médicos em um array, que armazena os dados de todos os médicos.
         $_SESSION["medico"][] = [
             "id" => $row['id'],
             "nome" => $row['nome']
         ];
         $index++;
     }
-
     header('Location: ../connections/chamaFormCadastro.php');
 
 } else {

@@ -5,6 +5,7 @@ include("conexao.php");
 $nome = $_POST['nome'];
 $email = $_POST['email'];
 $senha = $_POST['senha'];
+$confirmSenha = $_POST['confirmSenha'];
 $telefone = $_POST['telefone'];
 
 /// Consultar o banco de dados para verificar se o usuário existe
@@ -17,24 +18,25 @@ if ($result->num_rows > 0) {
     session_start();
     $_SESSION["errorEmail"] = true;
     header("location: ../pages/signup.php");
-
-} else {
-    // E-mail não foi encontrado, cadastra no banco o novo usuário
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        // Verifica se os campos estão preenchidos
-        if (empty($nome) || empty($email) || empty($senha) || empty($telefone)) {
-            session_start();
-            $_SESSION["error"] = true;
-            header("location: ../pages/signup.php");
-        } else {
-            $cadastra_usuario = "INSERT INTO usuario (nome, email, senha, telefone) VALUES('$nome', '$email', '$senha', '$telefone')";
-            mysqli_query($conn, $cadastra_usuario);
-            session_start();
-            $_SESSION["sucessoSignup"] = true;
-            header("location: ../pages/login.php");
-        }
+} elseif ($senha != $confirmSenha) {
+    // E-mail não foi encontrado, faz validações. Primeiro verifica a confirmação da senha.
+    session_start();
+    $_SESSION["senhaNaoConfere"] = true;
+    header("location: ../pages/signup.php");
+} elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Verifica se os campos estão preenchidos
+    if (empty($nome) || empty($email) || empty($senha) || empty($telefone)) {
+        session_start();
+        $_SESSION["error"] = true;
+        header("location: ../pages/signup.php");
+    } else {
+        // Passou nas validações, cadastra no banco o novo usuario.
+        $cadastra_usuario = "INSERT INTO usuario (nome, email, senha, telefone) VALUES('$nome', '$email', '$senha', '$telefone')";
+        mysqli_query($conn, $cadastra_usuario);
+        session_start();
+        $_SESSION["sucessoSignup"] = true;
+        header("location: ../pages/login.php");
     }
 }
-// Fechar a conexão com o banco de dados
 $conn->close();
 ?>

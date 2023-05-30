@@ -77,46 +77,19 @@ main {
 }
 
 footer {
-    display: flex;
-    flex-direction: row;
     width: 100%;
     height: 8%;
     background-color: @backgronund-principal;
 
     .description {
         display: flex;
-        width: 80%;
+        width: 100%;
         height: 100%;
         justify-content: center;
         align-items: center;
-
-        p {
-            font-size: @font-size-secundario;
-            color: @font-color-secundario;
-        }
-    }
-
-    .icons {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        min-width: 20%;
-        height: 80%;
-
-        .icons__a {
-            border-radius: 20px;
-            margin-top: 10px;
-            margin-left: 10px;
-            margin-right: 10px;
-            width: 20%;
-            height: 100%;
-
-            img {
-                width: 100%;
-                height: 100%;
-            }
-        }
+        text-align: center;
+        font-size: @font-size-secundario;
+        color: @font-color-secundario;
     }
 }
 
@@ -153,7 +126,7 @@ footer {
             color: red;
         }
 
-        .mensagem-sucessoSignup {
+        .mensagem-sucesso {
             text-align: center;
             align-self: center;
             font-size: @font-size-secundario;
@@ -217,7 +190,7 @@ footer {
         border: 2px solid black;
         border-radius: 10px;
         width: 30%;
-        height: 80%;
+        height: 90%;
         background-color: @backgronund-principal;
         z-index: 1;
 

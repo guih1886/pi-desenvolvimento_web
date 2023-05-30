@@ -1,4 +1,5 @@
 <?php
-
+// Desfaz a sessão do usuario e a destrói em seguida. Redireciona para a página de login.
 unset($_SESSION["usuario"]);
-header("location: ../index.php");
+session_destroy();
+header("location: ../pages/login.php");

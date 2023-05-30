@@ -2,20 +2,21 @@
 include("conexao.php");
 
 session_start();
+unset($_SESSION["alteracao"]);
 unset($_SESSION["formCadastro"]);
 unset($_SESSION["formExclui"]);
 
-$idUsuario = $_SESSION['usuario']["id"];
 //carrega todas as consultas ativas do usuário e seta na sessão
+$idUsuario = $_SESSION['usuario']["id"];
 $query = "SELECT c.id, c.data, c.idUsuario, c.idMedico, m.nome AS nomeMedico FROM consulta c
 JOIN medico m ON c.idMedico = m.id WHERE c.idUsuario = $idUsuario order by c.id";
 $result = $conn->query($query);
-$_SESSION["consulta"] = array();
+$_SESSION["consultas"] = array();
 
-while ($row = $result->fetch_assoc()) {
+while ($row = $result->fetch_assoc()) { 
     $index = 0;
-
-    $_SESSION["consulta"][] = [
+    // incluindo as consultas no array da sessão de consultas
+    $_SESSION["consultas"][] = [
         "id" => $row['id'],
         "data" => $row['data'],
         "idUsuario" => $row['idUsuario'],
@@ -24,6 +25,5 @@ while ($row = $result->fetch_assoc()) {
     ];
     $index++;
 }
-
 $_SESSION["formAltera"] = true;
 header("location: ../pages/home.php");

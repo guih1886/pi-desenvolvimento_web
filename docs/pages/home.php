@@ -24,10 +24,8 @@ if (!isset($_SESSION['usuario'])) {
             <img class="logo" src="../assets/valva.png" alt="Logo-Valva">
             <div class="menu__links">
                 <a href="../connections/chamaFormCadastro.php">Agendar Consulta</a>
-                <a href="../connections/chamaFormAltera.php" style="color:blue;border: 2px solid blue">Alterar
-                    Consulta</a>
-                <a href="../connections/chamaFormExclui.php" style="color:red; border: 2px solid red">Excluir
-                    Consulta</a>
+                <a href="../connections/chamaFormAltera.php" style="color:blue;border: 2px solid blue">Minhas
+                    consultas</a>
             </div>
             <div class="menu__logout">
                 <a href="../connections/logout.php">Sair</a>
@@ -36,15 +34,17 @@ if (!isset($_SESSION['usuario'])) {
     </header>
     <div class="container">
         <?php
-        //session_start();
         if (isset($_SESSION["formCadastro"])) {
-            include "../components/formCadastro.php";
+            include "../components/Home/formCadastro.php";
         }
         if (isset($_SESSION["formAltera"])) {
-            include "../components/formAltera.php";
+            include "../components/Home/formAltera.php";
+        }
+        if (isset($_SESSION["alteracao"])) {
+            include "../components/Home/formAlteraConsulta.php";
         }
         if (isset($_SESSION["formExclui"])) {
-            include "../components/formExclui.php";
+            include "../components/Home/formExclui.php";
         }
         ?>
     </div>
