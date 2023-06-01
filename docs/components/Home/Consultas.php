@@ -3,7 +3,7 @@
         <tr>
             <th>ID</th>
             <th>Data</th>
-            <th>ID Médico</th>
+            <th>Dentista</th>
             <th>Acões</th>
         </tr>
     </thead>
@@ -14,7 +14,11 @@
                     <?php echo $consulta["id"]; ?>
                 </td>
                 <td>
-                    <?php echo $consulta["data"]; ?>
+                    
+                    <?php 
+                    $dataFormatada = date("d/m/Y H:i", strtotime($consulta["data"]));
+                    echo $dataFormatada;
+                    ?>
                 </td>
                 <td>
                     <?php echo $consulta["nomeMedico"]; ?>

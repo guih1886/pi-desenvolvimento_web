@@ -9,7 +9,7 @@
             if ($medico["id"] == $_SESSION['consulta'][0]["idMedico"]) {
                 echo ' selected';
             }
-            echo '>' . $medico['nome'] . '</option>';
+            echo '>Dentista - ' . $medico['nome'] . '</option>';
         }
         ?>
     </select>

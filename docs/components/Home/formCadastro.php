@@ -9,7 +9,7 @@
     <select name="medico">
         <?php
         foreach ($_SESSION["medico"] as $medico) {
-            echo '<option name=' . $medico["id"] . ' value=' . $medico["id"] . '>' . $medico['nome'] . '</option>';
+            echo '<option name=' . $medico["id"] . ' value=' . $medico["id"] . '>Dentista - ' . $medico['nome'] . '</option>';
         }
         ?>
     </select>

@@ -14,7 +14,7 @@
 <body>
     <header>
         <div class="menu">
-            <img class="logo" src="./assets/valva.png" alt="Logo-Valva">
+          <!--  <img class="logo" src="./assets/valva.png" alt="Logo-Valva"> -->
             <div class="menu__links">
                 <a href="pages/login.php">Login</a>
             </div>

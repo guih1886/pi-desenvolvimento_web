@@ -21,7 +21,7 @@ if (!isset($_SESSION['usuario'])) {
 <body>
     <header>
         <div class="menu">
-            <img class="logo" src="../assets/valva.png" alt="Logo-Valva">
+            <!-- <img class="logo" src="../assets/valva.png" alt="Logo-Valva"> -->
             <div class="menu__links">
                 <a href="../connections/chamaFormCadastro.php">Agendar Consulta</a>
                 <a href="../connections/chamaFormAltera.php" style="color:blue;border: 2px solid blue">Minhas
